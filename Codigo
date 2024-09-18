@@ -1,0 +1,35 @@
+#DesafioTargetSistemas
+#Por André Negrão 18/09/2024
+def seriefibonacci(termo):
+    primeiro_termo = 0
+    segundo_termo = 1
+    terceiro_termo = 0
+    print(f"\n ------\n{primeiro_termo}")
+    print(segundo_termo)
+    for i in range(termo-2):
+        terceiro_termo = primeiro_termo+segundo_termo
+        primeiro_termo = segundo_termo
+        segundo_termo = terceiro_termo
+        print(terceiro_termo)
+
+def verificar_string(texto):
+    texto = texto.lower()
+    if "a" in texto:
+        print("A letra a/A está presente neste texto")
+    else:
+        print("A letra a/A não está presente neste texto")
+
+if __name__ == "__main__":
+    print("Ola, Aqui constam os programas respostas para o desafio tecnico ")
+    print(" 1 - Serie Fibonacci")
+    print(" 2 - Verificar se o carcter a existe no texto")
+    escolha = int(input("Escolha qual desafio deseja verificar:"))
+    match escolha:
+        case 1:
+            termo = int(input("Até que termo deseja imprimir?\n"))
+            seriefibonacci(termo)
+        case 2:
+            texto = input("Insira o texto que deseja verificar:\n")
+            verificar_string(texto)
+        case _:
+            print("Opção invalida")
